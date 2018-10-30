@@ -43,7 +43,13 @@ public class Java8Demo {
      *   }
      */
 
-
+    List<Employee> employees = Arrays.asList(
+            new Employee("zhangsan", 18, 999.99),
+            new Employee("lisi", 20, 999.99),
+            new Employee("wantgwu", 50, 999.99),
+            new Employee("zhaoliu", 40, 999.99),
+            new Employee("tianqi", 35, 999.99)
+    );
 
     //Demand : get employees whose age more than 35
     public List<Employee> filterEmployees(List<Employee> list){
@@ -61,16 +67,10 @@ public class Java8Demo {
 
     @Test
     public void test03(){
-        List<Employee> employees = Arrays.asList(
-                new Employee("zhangsan", 18, 999.99),
-                new Employee("lisi", 20, 999.99),
-                new Employee("wantgwu", 50, 999.99),
-                new Employee("zhaoliu", 40, 999.99),
-                new Employee("tianqi", 35, 999.99)
-        );
+
         List<Employee> emps = filterEmployees(employees);
-        String s = GsonUtil.toJson(emps);
-        System.out.printf(s);
+        String empsToJson = GsonUtil.toJson(emps);
+        System.out.printf(empsToJson);
     }
 
 }
